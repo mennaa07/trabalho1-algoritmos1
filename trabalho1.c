@@ -4,12 +4,12 @@
 
 int main(){
     
-    float a, b,  c, ax, bx, delta, x1, x2; // Declaracao das variaveis de tipo float que seram usadas
+    float a, b, i, c, ax, bx, delta, x1, x2; // Declaracao das variaveis de tipo float que seram usadas
     int escolha; // Variavel que recebe o input do usuario
     while(1) // Cria um loop que se mantem ativo durante todo o programa
     {
-        printf("||| MENU PRINCIPAL |||\n");
-        printf("Voce pode acessar diferentes funcoes digitando os numeros 1, 2, 3 e 0, sendo eles:"); 
+        printf("\n||| MENU PRINCIPAL |||\n\n");
+        printf("Voce pode acessar diferentes funcoes digitando os numeros 1, 2, 3 e 0, sendo eles:\n"); 
         printf("\n1- Resolver equacao de primeiro grau\n2- Resolver equacao do segundo grau\n3- Sobre o programa\n0- Sair\n");
         printf("Escolha uma opcao: ");
         scanf("%d", &escolha);
@@ -27,14 +27,16 @@ int main(){
             printf("Digite o valor de b (Numero que nao possui variavel): ");
             scanf("%f", &b);
 
-            
+            printf("Digite o valor apos o sinal de igual (=): ");
+            scanf("%f", &i);
             
             printf("\nEtapas:\n");
-            printf("1) A equacao enviada e (%.2f)x + (%.2f) = 0\n", a, b,);
+            printf("1) A equacao enviada e (%.2f)x + (%.2f) = %.2f\n", a, b, i);
             b = -b; // Equivalente a subtrair b em ambos os lados
-            printf("2) Isolar o valor de x: (%.2f)x = %.2f\n", a, b);
-            printf("3) Divir ambos os lados por a: (%.2f)x / (%.2f) = (%.2f) / (%.2f) \n", a, a, b, a);
-            float resolucao1 = b / a; // valor de B é dividido pelo valor a frente da variavel (A)
+            printf("2) Isolar o valor de x invertendo o sinal de b: (%.2f) = %.2f + %.2f\n", a, i, b);
+            i = i + b;
+            printf("3) Divir ambos os lados por a: (%.2f)x / (%.2f) = (%.2f) / (%.2f) \n", a, a, i, a);
+            float resolucao1 = i / a; // valor de B é dividido pelo valor a frente da variavel (A)
             printf("4) Resultado: %.2f\n\n", resolucao1);
             printf("O valor de X e igual a: %.2f\n\n", resolucao1);
             
@@ -72,7 +74,7 @@ int main(){
                     printf("Dado o delta positivo, as raizes seram duplas, sendo X1 = -(%.2f)+sqrt(%.2f) / (2.%.2f)\n", bx, delta, ax); 
                     x1 = (-bx + sqrt(delta)) / (2*ax); // -b + raiz de delta / 2*, sendo o X1
                     printf("X1 = %.2f\n", x1);
-                    printf("Para calcular X2 = (%.2f)-sqrt(%.2f)/2.%.2f\n", bx, delta, ax);
+                    printf("Para calcular X2 = -(%.2f)-sqrt(%.2f)/2.%.2f\n", bx, delta, ax);
                     x2 = (-bx - sqrt(delta)) / (2*ax); // -b - raiz de delta / 2*a, sendo o valor de X2
                     printf("X2 = %.2f\n\n", x2);
                     printf("Os valores das raizes sao: x1 = %.2f, x2 = %.2f\n\n", x1, x2);
@@ -83,7 +85,7 @@ int main(){
                 else if (delta == 0) // Raiz = 0 so havera um valor de X.
                 {
                     
-                    printf("Com o delta igual a zero, havera apenas uma unica raiz, sendo ela  X = (%.2f)+sqrt(%.2f)/2.%.2f\n", bx, delta, ax); 
+                    printf("Com o delta igual a zero, havera apenas uma unica raiz, sendo ela  X = -(%.2f)+sqrt(%.2f)/2.%.2f\n", bx, delta, ax); 
                     x1 = (-bx + sqrt(delta)) / (2*ax); // -b + raiz de delta / 2*, sendo o X1
                     
                     printf("Por conta do delta ser igual a 0, somar ou subtrair delta resultara no mesmo resultado, gerando uma unica raiz");
@@ -98,11 +100,16 @@ int main(){
         }
         else if (escolha == 3)
         {
-            printf("\nPrograma desenvolvido por: Bernardo Menna.\nTrabalho para a disciplina de Algoritmos 1.\n\n");
+            printf("\nPrograma desenvolvido por: Bernardo Menna\nTrabalho para a disciplina de Algoritmos 1.\n\n");
         }
         else if (escolha == 0)
         {
             break; // Sai do loop inicial, fechando o programa e mostrando a mensagem abaixo.
+        }
+        else   
+        {
+            printf("\nDigite um numero valido que esteja nas opcoes do menu.\n");
+            continue;
         }
             
         
