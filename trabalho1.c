@@ -4,7 +4,7 @@
 
 int main(){
     
-    float a, b, i, c, ax, bx, delta, x1, x2; // Declaracao das variaveis de tipo float que seram usadas
+    float a, b,  c, ax, bx, delta, x1, x2; // Declaracao das variaveis de tipo float que seram usadas
     int escolha; // Variavel que recebe o input do usuario
     while(1) // Cria um loop que se mantem ativo durante todo o programa
     {
@@ -27,11 +27,10 @@ int main(){
             printf("Digite o valor de b (Numero que nao possui variavel): ");
             scanf("%f", &b);
 
-            printf("Digite o valor apos o sinal de '=': ");
-            scanf("%f", i);
+            
             
             printf("\nEtapas:\n");
-            printf("1) A equacao enviada e (%.2f)x + (%.2f) = %f\n", a, b, i);
+            printf("1) A equacao enviada e (%.2f)x + (%.2f) = 0\n", a, b,);
             b = -b; // Equivalente a subtrair b em ambos os lados
             printf("2) Isolar o valor de x: (%.2f)x = %.2f\n", a, b);
             printf("3) Divir ambos os lados por a: (%.2f)x / (%.2f) = (%.2f) / (%.2f) \n", a, a, b, a);
