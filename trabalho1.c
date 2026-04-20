@@ -30,12 +30,12 @@ int main(){
             
             
             printf("\nEtapas:\n");
-            printf("1) A equacao enviada e (%.2f)x + (%.2f) = 0\n", a, b);
-            b = -b; // Inverter o sinal faz com que seja possivel igualar a operação
-            printf("2) Isolar o valor de x invertendo o sinal de b: (%.2f) = 0 + %.2f\n", a, b);
-            printf("3) Divir ambos os lados por a: (%.2f)x / (%.2f) = (%.2f) / (%.2f) \n", a, a, b, a);
+            printf("Formula: (%.2f)x + (%.2f) = 0\n", a, b);
+            printf("1) Isolar o valor de x subtraindo o valor de b em ambos os lados: (%.2f)x + (%.2f) - (%.2f) = 0 - (%.2f)\n", a, b, b, b);
+            b = -b;
+            printf("2) Divir ambos os lados por a: (%.2f)x / (%.2f) = (%.2f) / (%.2f) \n", a, a, b, a);
             float resolucao1 = b / a; // valor de b (nesse caso, valor sem variavel isolado) é dividido pelo valor a frente da variavel (a)
-            printf("4) Resultado: %.2f\n\n", resolucao1);
+            printf("3) Resultado: %.2f\n\n", resolucao1);
             printf("O valor de X e igual a: %.2f\n\n", resolucao1);
             
         }
@@ -55,8 +55,8 @@ int main(){
                 scanf("%f", &c);
 
                 printf("\nEtapas:\n");
-                printf("Descobrir o valor de Delta, seguindo a formula: (b^2)-4*a*c\n");
-                printf("Substituindo os valores: (%.2f^2)-(4.%.2f.%.2f)\n", bx, ax, c);
+                printf("1) Descobrir o valor de Delta, seguindo a formula: (b^2)-4*a*c\n");
+                printf("2) Substituindo os valores: (%.2f^2)-(4.%.2f.%.2f)\n", bx, ax, c);
                 bx2 = pow(bx, 2); // ax2 e bx2 guardam os valores das etapas mais avançadas do calculo, facilitando para resolver a equacao
                 ax2 = 4*ax*c;
                 printf("(%.2f)-(%.2f)\n", bx2, ax2);
@@ -72,27 +72,27 @@ int main(){
                 // Com raizes duplas distintas, o valor de -b ira somar e subtrair a raiz quadrada de delta e ser divido por 2*ax, resultando no valor das duas raizes (x1, x2)
                 {
                     printf("\nCom o valor de delta sendo positivo, sera utilizado a formula:\n(-b) +- sqrt(delta)/(2*a)\n");
-                    printf("Dado o delta positivo, as raizes seram duplas.\n\n");
+                    printf("Dado o delta positivo, as raizes serao duplas.\n\n");
                     raizdelta = sqrt(delta);
-                    printf("| sqrt(Delta) = sqrt(%.2f) = %.2f\n", delta, raizdelta); 
+                    printf("| 1) Raiz de Delta = sqrt(%.2f) = %.2f\n", delta, raizdelta); 
                     denominador = 2*ax;
-                    printf("| Denominador = 2*a = %.2f\n\n", denominador);
+                    printf("|  2) Denominador = 2*a = %.2f\n\n", denominador);
 
                     printf("Calculo de X1:\n");
 
-                    printf("| x1 = (-b + sqrt(delta)) / (2a)\n");
-                    printf("| x1 = (-(%.2f) + %.2f) / %.2f\n", bx, raizdelta, denominador);
+                    printf("| 1) x1 = (-b + sqrt(delta)) / (2a)\n");
+                    printf("| 2) x1 = (-(%.2f) + %.2f) / %.2f\n", bx, raizdelta, denominador);
                     somax = -bx + raizdelta;
-                    printf("| x1 = %.2f / %.2f\n", somax, denominador);
+                    printf("| 3) x1 = %.2f / %.2f\n", somax, denominador);
                     x1 = (-bx + sqrt(delta)) / (2*ax); // -b + raiz de delta / 2*, sendo o X1
                     printf("| x1 = %.2f\n\n", x1);
 
                     printf("Calculo de X2:\n");
 
-                    printf("| x2 = (-b - sqrt(delta)) / (2a)\n");
-                    printf("| x2 = (-(%.2f) - %.2f) / %.2f\n", bx, raizdelta, denominador);
+                    printf("| 1) x2 = (-b - sqrt(delta)) / (2a)\n");
+                    printf("| 2) x2 = (-(%.2f) - %.2f) / %.2f\n", bx, raizdelta, denominador);
                     somax = -bx - raizdelta;
-                    printf("| x2 = %.2f / %.2f\n", somax, denominador);
+                    printf("| 3) x2 = %.2f / %.2f\n", somax, denominador);
                     x2 = (-bx - sqrt(delta)) / (2*ax); // -b - raiz de delta / 2*a, sendo o valor de X2
                     printf("| x2 = %.2f\n\n", x2);
                     printf("Os valores das raizes sao: x1 = %.2f, x2 = %.2f\n\n", x1, x2);
@@ -104,8 +104,9 @@ int main(){
                 {
                     
                     printf("\nCom o delta igual a zero, havera apenas uma unica raiz.\n\n");
+                    printf("\nA raiz sera encontrada seguindo a formula: x = (-b + sqrt(delta)) / (2a).\n\n");
                     raizdelta = sqrt(delta);
-                    printf("| sqrt(Delta) = sqrt(%.2f) = %.2f\n", delta, raizdelta);
+                    printf("| Raiz de Delta = sqrt(%.2f) = %.2f\n", delta, raizdelta);
                     denominador = 2*ax;
                     printf("| Denominador = 2*a = 2*%.2f = %.2f\n", ax, denominador);
                     printf("| X = -(%.2f) + %.2f / (%.2f)\n", bx, raizdelta, denominador);
@@ -114,7 +115,7 @@ int main(){
                     x1 = bx / denominador;
                     printf("| X = %.2f\n", x1);
                     printf("| Por conta do delta ser igual a 0, somar ou subtrair raiz de delta resultara no mesmo resultado, gerando uma unica raiz");
-                    printf("\n\n O valor da raiz e: %.2f\n\n", x1);
+                    printf("\n\n O valor da raiz e: x = %.2f\n\n", x1);
                 }
                 else
                 {
