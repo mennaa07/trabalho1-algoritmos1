@@ -33,7 +33,7 @@ int main(){
             printf("Formula: (%.2f)x + (%.2f) = 0\n", a, b);
             printf("1) Isolar o valor de x subtraindo o valor de b em ambos os lados: (%.2f)x + (%.2f) - (%.2f) = 0 - (%.2f)\n", a, b, b, b);
             b = -b;
-            printf("2) Divir ambos os lados por a: (%.2f)x / (%.2f) = (%.2f) / (%.2f) \n", a, a, b, a);
+            printf("2) Dividir ambos os lados por a: (%.2f)x / (%.2f) = (%.2f) / (%.2f) \n", a, a, b, a);
             float resolucao1 = b / a; // valor de b (nesse caso, valor sem variavel isolado) é dividido pelo valor a frente da variavel (a)
             printf("3) Resultado: %.2f\n\n", resolucao1);
             printf("O valor de X e igual a: %.2f\n\n", resolucao1);
@@ -71,8 +71,8 @@ int main(){
                 if (delta > 0) 
                 // Com raizes duplas distintas, o valor de -b ira somar e subtrair a raiz quadrada de delta e ser divido por 2*ax, resultando no valor das duas raizes (x1, x2)
                 {
-                    printf("\nCom o valor de delta sendo positivo, sera utilizado a formula:\n(-b) +- sqrt(delta)/(2*a)\n");
-                    printf("Dado o delta positivo, as raizes serao duplas.\n\n");
+                    printf("\nCom o valor de delta sendo positivo, sera utilizada a formula:\n(-b) +- sqrt(delta)/(2*a)\n");
+                    printf("Dado o delta positivo, as raizes serao duplas e distintas.\n\n");
                     raizdelta = sqrt(delta);
                     printf("| 1) Raiz de Delta = sqrt(%.2f) = %.2f\n", delta, raizdelta); 
                     denominador = 2*ax;
@@ -100,7 +100,7 @@ int main(){
                     
                    
                 }
-                else if (delta == 0) // com Delta = 0 so havera uma raiz 
+                else if (delta == 0) // com Delta = 0, so havera uma raiz raiz 
                 {
                     
                     printf("\nCom o delta igual a zero, havera apenas uma unica raiz.\n\n");
