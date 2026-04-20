@@ -71,7 +71,7 @@ int main(){
                 if (delta > 0) 
                 // Com raizes duplas distintas, o valor de -b ira somar e subtrair a raiz quadrada de delta e ser divido por 2*ax, resultando no valor das duas raizes (x1, x2)
                 {
-                    printf("\nCom o valor de delta sendo positivo, sera utilizada a formula:\n(-b) +- sqrt(delta)/(2*a)\n");
+                    printf("\nCom o valor de delta sendo positivo, sera utilizada a formula:\n((-b) +- sqrt(delta))/(2*a)\n");
                     printf("Dado o delta positivo, as raizes serao duplas e distintas.\n\n");
                     raizdelta = sqrt(delta);
                     printf("| 1) Raiz de Delta = sqrt(%.2f) = %.2f\n", delta, raizdelta); 
